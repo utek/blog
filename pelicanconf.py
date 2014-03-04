@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u"Łukasz 'utek' Bołdys"
 SITENAME = u"utek's thoughts"
-SITEURL = ''
+SITEURL = 'http://dev.utek.pl'
 
 TIMEZONE = 'Europe/Paris'
 
@@ -28,3 +28,8 @@ DEFAULT_PAGINATION = 10
 
 THEME = "themes/uteks"
 READERS = {'html': None}
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
+
+
+ARTICLE_URL = '{date:%Y}/{slug}/'
+ARTICLE_SAVE_AS = '{date:%Y}/{slug}/index.html'

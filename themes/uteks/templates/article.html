@@ -32,8 +32,8 @@
         var disqus_shortname = 'uteksthoughts'; // required: replace example with your forum shortname
 
         // The following are highly recommended additional parameters. Remove the slashes in front to use.
-        var disqus_identifier = "{{article.slug}}";
-        var disqus_url = "{{article.slug}}";
+        var disqus_identifier = "{{article.url}}";
+        var disqus_url = "{{ SITEURL }}/{{ article.url }}";
 
         if (window.location.hostname != "localhost") {
             /* * * DONT EDIT BELOW THIS LINE * * */
