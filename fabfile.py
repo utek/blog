@@ -1,5 +1,8 @@
-from fabric.api import *
-import fabric.contrib.project as project
+from fabric.api import (
+    local,
+    env
+    )
+# import fabric.contrib.project as project
 import os
 import sys
 import SimpleHTTPServer
