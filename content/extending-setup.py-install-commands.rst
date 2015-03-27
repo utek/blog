@@ -40,7 +40,7 @@ Here's my solution:
           long_description='DESCRIPTION',
           classifiers=[
           ],
-          author='Åukasz BoÅ‚dys',
+          author='Łukasz Bołdys',
           author_email='mail@utek.pl',
           url='',
           keywords='',
