@@ -57,3 +57,13 @@ Here's my solution:
 Using this code in *setup.py* will install *fabric*, *pelican* and *ipython* when doing :code:`python setup.py develop` but will only install fabric and pelican if installing via :code:`python setup.py install`.
 
 If you don't want to change default behavior of *develop* you can add new command with changing :code:`cmdclass={'develop': ExtendedDevel}` to :code:`cmdclass={'newcommand': ExtendedDevel}`.
+
+
+Edit 2015-04-22 10:47:20:
+--------------------------
+As I first needed method explained above to add some lib to development enviroment that was not needed in production enviroment. But there is better method to do it.
+
+You can pass 'extras_require' argument to setup(). 'extras_require' is and dictionary of 'targets' as key and list of additional requirements as value.
+See documentation_ for more info.
+
+.. _documentation: https://pythonhosted.org/setuptools/setuptools.html#declaring-extras-optional-features-with-their-own-dependencies
