@@ -1,10 +1,10 @@
-:title: Getting package from code without importing
-:slug: getting-package-from-code-without-importing
+Getting package version from code without importing
+###################################################
+
 :date: 2015-04-07 07:21:22
 :tags: python, setuptools, ast, version
 :category: programming
 :author: Łukasz Bołdys
-:lang: pl
 
 I use this code for getting version info from package code without importing it, as it has to be installed to be imported and it can't be installed without version number. Classic 'Chicken or the egg' dilema.
 
