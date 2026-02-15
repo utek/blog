@@ -2,7 +2,7 @@ IMAGE_NAME := blog
 PORT := 8000
 RUN := docker run --rm -v $(CURDIR):/app -w /app $(IMAGE_NAME)
 
-.PHONY: build build_blog clean rebuild serve reserve regenerate preview lint help
+.PHONY: build build_blog clean rebuild serve reserve regenerate preview lint fix-eol help
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-15s %s\n", $$1, $$2}'
@@ -31,5 +31,8 @@ regenerate: ## Watch for changes and auto-regenerate
 preview: ## Build with production settings
 	$(RUN) uv run fab preview
 
-lint: ## Run markdownlint on content
+fix-eol: ## Fix Windows-style line endings (CRLF -> LF)
+	$(RUN) sh scripts/fix-eol.sh content/
+
+lint: fix-eol ## Run linters on content
 	$(RUN) mdl content/
