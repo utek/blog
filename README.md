@@ -47,9 +47,6 @@ uv sync
 # Build the site (development)
 uv run fab build
 
-# Build with production settings (enables feeds)
-uv run fab preview
-
 # Clean output and rebuild
 uv run fab rebuild
 
