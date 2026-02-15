@@ -50,3 +50,8 @@ def serve(c):
 def reserve(c):
     build(c)
     serve(c)
+
+
+@task
+def publish(c):
+    c.run("pelican -s publishconf.py")

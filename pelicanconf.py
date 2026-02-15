@@ -23,8 +23,8 @@ SOCIAL = ()
 
 DEFAULT_PAGINATION = 10
 
-# Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+# Use document-relative URLs (no hostname)
+RELATIVE_URLS = True
 
 PATH = "content"
 THEME = "themes/uteks"

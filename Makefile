@@ -2,7 +2,7 @@ IMAGE_NAME := blog
 PORT := 8000
 RUN := docker run --rm -v $(CURDIR):/app -w /app $(IMAGE_NAME)
 
-.PHONY: build build_blog clean rebuild serve reserve regenerate lint fix-eol help
+.PHONY: build build_blog clean rebuild serve reserve regenerate publish lint fix-eol help
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-15s %s\n", $$1, $$2}'
@@ -18,6 +18,9 @@ clean: ## Remove generated output
 
 rebuild: ## Clean and rebuild the blog
 	$(RUN) uv run fab rebuild
+
+publish: ## Clean and rebuild the blog
+	$(RUN) uv run fab publish
 
 serve: ## Start local dev server on port 8000
 	docker run --rm -v $(CURDIR):/app -w /app -p $(PORT):$(PORT) $(IMAGE_NAME) uv run fab serve
