@@ -14,17 +14,16 @@ Blog posts cover Python development, web technologies, databases, and tooling â€
 ## Tech Stack
 
 - **Static site generator:** Pelican
-- **Content format:** reStructuredText (.rst)
+- **Content format:** Markdown (.md)
 - **Theme:** Custom Bootstrap 3 theme (`themes/uteks/`)
 - **Templating:** Jinja2
 - **Build/deploy automation:** Fabric
-- **Comments:** Disqus
 - **Analytics:** Google Analytics
 
 ## Project Structure
 
 ```
-content/          Blog posts (.rst files)
+content/          Blog posts (.md files)
 themes/uteks/     Custom theme (templates, CSS, JS, fonts)
 fabfile.py        Fabric build and deployment tasks
 pelicanconf.py    Development configuration
@@ -33,34 +32,35 @@ publishconf.py    Production configuration
 
 ## Prerequisites
 
-- Python 2.7+
-- [Pelican](https://getpelican.com/)
-- [Fabric](https://www.fabfile.org/)
+- Python 3.10+
+- [uv](https://docs.astral.sh/uv/)
 
-```
-pip install pelican fabric
+## Setup
+
+```bash
+uv sync
 ```
 
 ## Usage
 
 ```bash
 # Build the site (development)
-fab build
+uv run fab build
 
 # Build with production settings (enables feeds)
-fab preview
+uv run fab preview
 
 # Clean output and rebuild
-fab rebuild
+uv run fab rebuild
 
 # Start a local dev server at http://localhost:8000
-fab serve
+uv run fab serve
 
 # Build and serve in one step
-fab reserve
+uv run fab reserve
 
 # Watch for changes and auto-regenerate
-fab regenerate
+uv run fab regenerate
 ```
 
 ## License
