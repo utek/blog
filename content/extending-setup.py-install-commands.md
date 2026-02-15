@@ -9,7 +9,10 @@ author: Łukasz Bołdys
 Lately one of my associates asked if there is a way to use different
 *install_requires* lists in *setup.py* depending on way of installing.
 
-If you are doing `python setup.py install` you would get one set of requires and doing `python setup.pl develop` would give you another set of requires (either extended or totally different).
+If you are doing `python setup.py install` you would get
+one set of requires and doing `python setup.pl develop`
+would give you another set of requires
+(either extended or totally different).
 
 Here's my solution:
 
@@ -53,13 +56,26 @@ setup(name='lalala',
       )
 ```
 
-Using this code in *setup.py* will install *fabric*, *pelican* and *ipython* when doing `python setup.py develop` but will only install fabric and pelican if installing via `python setup.py install`.
+Using this code in *setup.py* will install *fabric*,
+*pelican* and *ipython* when doing
+`python setup.py develop` but will only install fabric
+and pelican if installing via
+`python setup.py install`.
 
-If you don't want to change default behavior of *develop* you can add new command with changing `cmdclass={'develop': ExtendedDevel}` to `cmdclass={'newcommand': ExtendedDevel}`.
+If you don't want to change default behavior of *develop*
+you can add new command with changing
+`cmdclass={'develop': ExtendedDevel}` to
+`cmdclass={'newcommand': ExtendedDevel}`.
 
-## Edit 2015-04-22 10:47:20:
+# Edit 2015-04-22 10:47:20
 
-As I first needed method explained above to add some lib to development enviroment that was not needed in production enviroment. But there is better method to do it.
+As I first needed method explained above to add some lib
+to development enviroment that was not needed in production
+enviroment. But there is better method to do it.
 
-You can pass 'extras_require' argument to setup(). 'extras_require' is and dictionary of 'targets' as key and list of additional requirements as value.
-See [documentation](https://pythonhosted.org/setuptools/setuptools.html#declaring-extras-optional-features-with-their-own-dependencies) for more info.
+You can pass 'extras_require' argument to setup().
+'extras_require' is and dictionary of 'targets' as key
+and list of additional requirements as value.
+See [documentation][1] for more info.
+
+[1]: https://pythonhosted.org/setuptools/setuptools.html#declaring-extras-optional-features-with-their-own-dependencies

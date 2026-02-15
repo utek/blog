@@ -11,7 +11,8 @@ I've updated my package `PySeaweed` (and changed it name from `PyWeed`).
 Changes:
 
 - Overall code cleanup
-- Added option yo use `reqests.Session()` for better performance while dealing with huge ammount of files
+- Added option yo use `reqests.Session()` for better
+  performance while dealing with huge ammount of files
 - Fixed some tests
 - Merge in one fork
 

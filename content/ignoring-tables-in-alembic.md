@@ -8,14 +8,18 @@ author: Łukasz Bołdys
 
 While working on spatial enabled application I came up to a problem
 with spatial table in my postgres database (`spatial_ref_sys`).
-[Alembic](http://alembic.readthedocs.org/en/latest/) insisted on deleting this table as it wasn't declared in my `models.py`.
+[Alembic](http://alembic.readthedocs.org/en/latest/)
+insisted on deleting this table as it wasn't declared
+in my `models.py`.
 
-I didn't wanted to define it just to keep [Alembic](http://alembic.readthedocs.org/en/latest/) from removing it so
-I've added following changes to `.ini` and `env.py` files:
+I didn't wanted to define it just to keep
+[Alembic](http://alembic.readthedocs.org/en/latest/)
+from removing it so I've added following changes to
+`.ini` and `env.py` files:
 
 <!-- summary -->
 
-## development.ini
+# development.ini
 
 ```ini
 [alembic:exclude]

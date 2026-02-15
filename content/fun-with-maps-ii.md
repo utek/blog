@@ -6,8 +6,10 @@ category: programming
 author: Łukasz Bołdys
 ---
 
-[Last time]({filename}fun-with-maps.md) I've created map with overlay that shows lightnings. Unfortunately
-standard OpenStreetMaps style is too bright for lightnings to be visible enough.
+[Last time]({filename}fun-with-maps.md) I've created map
+with overlay that shows lightnings. Unfortunately
+standard OpenStreetMaps style is too bright for lightnings
+to be visible enough.
 
 My solution was to add overlay layer that darken map to enhance visibility of
 Bliztordung.org layer. For this I've used `OpenLayers.Layer.Image`. This layer

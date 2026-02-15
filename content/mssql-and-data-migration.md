@@ -8,5 +8,6 @@ author: Łukasz Bołdys
 
 Just a little remainder (mostly to myself).
 
-When moving MSSql database between two servers and using Import/Export tool from MSSql
-remember that there are no constraints or indices created.
+When moving MSSql database between two servers and using
+Import/Export tool from MSSql remember that there are no
+constraints or indices created.

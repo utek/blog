@@ -10,7 +10,9 @@ While working on my geo enabled appliction I wondered if one could
 use data from [Blitzortung.org](http://blitzortung.org/) to display map of lightings.
 
 I'm using [OpenLayers](http://openlayers.org/) to display map using data from OpenStreetMap.
-So to display data from [Blitzortung.org](http://blitzortung.org/) I needed to create new layer.
+So to display data from
+[Blitzortung.org](http://blitzortung.org/)
+I needed to create new layer.
 But instead of using `OpenLayers.Layer.OSM` I'm using `OpenLayers.Layer.XYZ`.
 
 <!-- summary -->

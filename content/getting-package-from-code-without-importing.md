@@ -6,11 +6,18 @@ category: programming
 author: Łukasz Bołdys
 ---
 
-I use this code for getting version info from package code without importing it, as it has to be installed to be imported and it can't be installed without version number. Classic 'Chicken or the egg' dilema.
+I use this code for getting version info from package code
+without importing it, as it has to be installed to be
+imported and it can't be installed without version number.
+Classic 'Chicken or the egg' dilema.
 
-I'm using `ast` module from Python stdlib to parse file from package code. In example I'm using `__init__.py` but one can use any other file.
+I'm using `ast` module from Python stdlib to parse file
+from package code. In example I'm using `__init__.py`
+but one can use any other file.
 
-It's works with module level variables (only `string` or `number`) and it's alternative to using `eval()` or `exec()`.
+It's works with module level variables (only `string` or
+`number`) and it's alternative to using `eval()` or
+`exec()`.
 
 `setup.py`
 
