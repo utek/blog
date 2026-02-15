@@ -67,7 +67,7 @@ you can add new command with changing
 `cmdclass={'develop': ExtendedDevel}` to
 `cmdclass={'newcommand': ExtendedDevel}`.
 
-# Edit 2015-04-22 10:47:20
+## Edit 2015-04-22 10:47:20
 
 As I first needed method explained above to add some lib
 to development enviroment that was not needed in production

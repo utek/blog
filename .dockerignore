@@ -1,0 +1,26 @@
+# Python
+.venv
+__pycache__
+*.pyc
+
+# Git
+.git
+.gitattributes
+.gitignore
+
+# CI/CD and dev tooling
+.github
+.pre-commit-config.yaml
+.ruff_cache
+.mdlrc
+.mdl_style.rb
+
+# Docker
+Dockerfile
+.dockerignore
+
+# IDE and OS
+.claude
+
+# Build output
+output

@@ -34,3 +34,14 @@ PYGMENTS_RST_OPTIONS = {"linenos": "table"}
 
 ARTICLE_URL = "{date:%Y}/{slug}/"
 ARTICLE_SAVE_AS = "{date:%Y}/{slug}/index.html"
+
+# Markdown configuration
+MARKDOWN = {
+    "extension_configs": {
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
+        "markdown.extensions.extra": {},
+        "markdown.extensions.meta": {},
+        "markdown.extensions.toc": {},
+    },
+    "output_format": "html5",
+}

@@ -19,7 +19,7 @@ from removing it so I've added following changes to
 
 <!-- summary -->
 
-# development.ini
+## development.ini
 
 ```ini
 [alembic:exclude]
