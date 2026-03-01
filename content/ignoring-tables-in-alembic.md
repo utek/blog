@@ -6,6 +6,8 @@ category: programming
 author: Łukasz Bołdys
 ---
 
+# Ignoring tables in Alembic
+
 While working on spatial enabled application I came up to a problem
 with spatial table in my postgres database (`spatial_ref_sys`).
 [Alembic](http://alembic.readthedocs.org/en/latest/)
@@ -26,7 +28,7 @@ from removing it so I've added following changes to
 tables = spatial_ref_sys
 ```
 
-## env.py
+## `env.py`
 
 ```python
 def exclude_tables_from_config(config_):

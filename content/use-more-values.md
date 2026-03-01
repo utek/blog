@@ -20,7 +20,9 @@ class Foo(models.Model):
 
 Everything looks good here. Now we have a developer that should implement
 listing of all the names of model `Foo`. As they are thinking about performance
-they use "[only](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#django.db.models.query.QuerySet.only)" to limit size of the query (Django ORM will query only for
+they use
+"[only](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#django.db.models.query.QuerySet.only)"
+to limit size of the query (Django ORM will query only for
 the mentioned field).
 
 ```python
