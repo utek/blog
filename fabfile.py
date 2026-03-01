@@ -1,65 +1,57 @@
-from fabric.api import (
-    local,
-    env
-)
-# import fabric.contrib.project as project
 import os
 import sys
-import SimpleHTTPServer
-import SocketServer
+import http.server
+import socketserver
 
-# Local path configuration (can be absolute or relative to fabfile)
-env.deploy_path = 'output'
-DEPLOY_PATH = env.deploy_path
+from invoke import task
+
+DEPLOY_PATH = "output"
 
 
-def clean():
+@task
+def clean(c):
     if os.path.isdir(DEPLOY_PATH):
-        local('rm -rf {deploy_path}'.format(**env))
-        local('mkdir {deploy_path}'.format(**env))
+        c.run("rm -rf {}".format(DEPLOY_PATH))
+        c.run("mkdir {}".format(DEPLOY_PATH))
 
 
-def build():
-    local('pelican -s pelicanconf.py')
+@task
+def build(c):
+    c.run("pelican -s pelicanconf.py")
 
 
-def rebuild():
-    clean()
-    build()
+@task
+def rebuild(c):
+    clean(c)
+    build(c)
 
 
-def regenerate():
-    local('pelican -r -s pelicanconf.py')
+@task
+def regenerate(c):
+    c.run("pelican -r -s pelicanconf.py")
 
 
-def serve():
-    os.chdir(env.deploy_path)
+@task
+def serve(c):
+    os.chdir(DEPLOY_PATH)
 
     PORT = 8000
 
-    class AddressReuseTCPServer(SocketServer.TCPServer):
+    class AddressReuseTCPServer(socketserver.TCPServer):
         allow_reuse_address = True
 
-    server = AddressReuseTCPServer(('', PORT), SimpleHTTPServer.SimpleHTTPRequestHandler)
+    server = AddressReuseTCPServer(("", PORT), http.server.SimpleHTTPRequestHandler)
 
-    sys.stderr.write('Serving on port {0} ...\n'.format(PORT))
+    sys.stderr.write("Serving on port {0} ...\n".format(PORT))
     server.serve_forever()
 
 
-def reserve():
-    build()
-    serve()
+@task
+def reserve(c):
+    build(c)
+    serve(c)
 
 
-def preview():
-    local('pelican -s publishconf.py')
-
-# @hosts(production)
-# def publish():
-#     local('pelican -s publishconf.py')
-#     project.rsync_project(
-#         remote_dir=dest_path,
-#         exclude=".DS_Store",
-#         local_dir=DEPLOY_PATH.rstrip('/') + '/',
-#         delete=True
-#     )
+@task
+def publish(c):
+    c.run("pelican -s publishconf.py")

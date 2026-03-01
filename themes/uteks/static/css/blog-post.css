@@ -1,4 +1,5 @@
 body {
+	font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-top: 100px; /* 100px is double the height of the navbar - I made it a big larger for some more space - keep it at 50px at least if you want to use the fixed top nav */
 }
 
@@ -8,4 +9,30 @@ footer {
 
 .highlight pre {
     background: none repeat scroll 0 0 #333333;
+}
+
+/* Demote markdown headers - # header renders like h2, ## like h3, etc.
+   This prevents duplicate h1 since article title is already h1 */
+.entry-content h1 {
+    font-size: 1.5rem;  /* Same as h2 */
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.entry-content h2 {
+    font-size: 1.25rem;  /* Same as h3 */
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.entry-content h3 {
+    font-size: 1.125rem;  /* Same as h4 */
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
